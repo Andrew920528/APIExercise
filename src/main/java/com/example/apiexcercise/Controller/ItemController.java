@@ -27,9 +27,7 @@ public class ItemController {
     @GetMapping(path = "/single/{itemID}")
     public List<Item> getItem(@PathVariable("itemID") String itemID) {return itemService.getItem(itemID);}
 
-    //@GetMapping(path = {"itemIDs"}) <= Why wouldn't this not work?
-    @RequestMapping(value="{itemIDs}", method=RequestMethod.GET)
-    @ResponseBody
+    @GetMapping(path = "{itemIDs}")
     public List<Item> getItems(@PathVariable("itemIDs") List<String> itemIDs) {
         // System.out.println(itemIDs);
         return itemService.getItems(itemIDs);
