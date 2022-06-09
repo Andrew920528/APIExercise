@@ -1,7 +1,7 @@
-package com.example.apiexcercise.Controller;
+package com.example.apiexcercise.controller;
 
-import com.example.apiexcercise.Model.Item;
-import com.example.apiexcercise.Service.ItemService;
+import com.example.apiexcercise.model.Item;
+import com.example.apiexcercise.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,13 +24,13 @@ public class ItemController {
     }
 
     // This get method is unnecessary because getItems can get single item
-    @GetMapping(path = "/single/{itemID}")
-    public List<Item> getItem(@PathVariable("itemID") String itemID) {return itemService.getItem(itemID);}
+    @GetMapping(path = "/single/{itemId}")
+    public List<Item> getItem(@PathVariable("itemId") String itemId) {return itemService.getItem(itemId);}
 
-    @GetMapping(path = "{itemIDs}")
-    public List<Item> getItems(@PathVariable("itemIDs") List<String> itemIDs) {
-        // System.out.println(itemIDs);
-        return itemService.getItems(itemIDs);
+    @GetMapping(path = "{itemIds}")
+    public List<Item> getItems(@PathVariable("itemIds") List<String> itemIds) {
+        // System.out.println(itemIds);
+        return itemService.getItems(itemIds);
     }
 
     // Exercise 1: http:localhost8080/brand/T
@@ -44,9 +44,9 @@ public class ItemController {
         this.itemService.addItem(item);
     }
 
-    @DeleteMapping(path = "{itemID}")
-    public void deleteItem(@PathVariable("itemID") String itemID){
-        this.itemService.deleteItem(itemID);
+    @DeleteMapping(path = "{itemId}")
+    public void deleteItem(@PathVariable("itemId") String itemId){
+        this.itemService.deleteItem(itemId);
     }
 
 }

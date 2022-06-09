@@ -1,6 +1,6 @@
-package com.example.apiexcercise.Repository;
+package com.example.apiexcercise.repository;
 
-import com.example.apiexcercise.Model.Item;
+import com.example.apiexcercise.model.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.stereotype.Repository;
@@ -13,11 +13,11 @@ public interface ItemRepository
         extends JpaRepository<Item,Integer> {
 
     List<Item> findAllByOrderByPriceDesc();
-    List<Item> findByItemID(String itemID);
+    List<Item> findByItemId(String itemId);
 
 
     @Transactional
-    Integer deleteByItemID(String itemID);
+    Integer deleteByItemId(String itemId);
 
-    boolean existsByItemID(String itemID);
+    boolean existsByItemId(String itemId);
 }

@@ -1,13 +1,12 @@
-package com.example.apiexcercise.Service;
+package com.example.apiexcercise.service;
 
-import com.example.apiexcercise.Model.Item;
-import com.example.apiexcercise.Repository.ItemRepository;
+import com.example.apiexcercise.model.Item;
+import com.example.apiexcercise.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,31 +29,34 @@ public class ItemService {
         itemRepository.save(item);
     }
 
-    public void deleteItem(String itemID) {
-        boolean exists = itemRepository.existsByItemID(itemID);
+    public void deleteItem(String itemId) {
+        boolean exists = itemRepository.existsByItemId(itemId);
         if(!exists){
             throw new IllegalStateException(
-              "Item with id " + itemID + " does not exists."
+              "Item with id " + itemId + " does not exists."
             );
         }
-        itemRepository.deleteByItemID(itemID);
+        itemRepository.deleteByItemId(itemId);
     }
 
-    public List<Item> getItem(String itemID) {
-        return itemRepository.findByItemID(itemID);
+    public List<Item> getItem(String itemId) {
+        return itemRepository.findByItemId(itemId);
     }
 
-    public List<Item> getItems(List<String> itemIDs) {
+    public List<Item> getItems(List<String> itemIds) {
+        // This also works
+        /*
         List<Item> output = Collections.emptyList();
-        for(String id :itemIDs){
-            output = Stream.concat(output.stream(), itemRepository.findByItemID(id).stream())
+        for(String id :itemIds){
+            output = Stream.concat(output.stream(), itemRepository.findByItemId(id).stream())
                     .collect(Collectors.toList());
         }
          return output;
+         */
 
-
-
-//        return itemIDs.stream().map(itemId->itemRepository.findByItemID(itemId).get(0)).collect(Collectors.toList());
+        return itemIds.stream()
+                .map(itemId->itemRepository.findByItemId(itemId).get(0))
+                .collect(Collectors.toList());
     }
 
     public List<Item> getItemsByBrand(String search){

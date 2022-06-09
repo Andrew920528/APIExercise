@@ -1,12 +1,12 @@
-package com.example.apiexcercise.Config;
+package com.example.apiexcercise.config;
 
-import com.example.apiexcercise.Model.Item;
-import com.example.apiexcercise.Repository.ItemRepository;
+import com.example.apiexcercise.model.Item;
+import com.example.apiexcercise.repository.ItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Configuration
@@ -21,14 +21,15 @@ public class ItemConfig {
                     "ITEM01",
                     "Item 1",
                     "NAPA",
-                    100
+                    new BigDecimal(100)
+
             );
 
             Item item2 = new Item(
                     "ITEM02",
                     "Item 2",
                     "NAPA",
-                    120
+                    new BigDecimal(120)
             );
 
             Item item3 = new Item(
@@ -36,98 +37,98 @@ public class ItemConfig {
                     "ITEM03",
                     "Item 3",
                     "NAPA",
-                    203
+                    new BigDecimal(203)
             );
 
             Item item4 = new Item(
                     "ITEM04",
                     "Item 4",
                     "TAPA",
-                    120
+                    new BigDecimal(120)
             );
 
             Item item5 = new Item(
                     "ITEM05",
                     "Item 5",
                     "TAPA",
-                    120
+                    new BigDecimal(120)
             );
 
             Item item6 = new Item(
                     "ITEM06",
                     "Item 6",
                     "TAPA",
-                    199
+                    new BigDecimal(199)
             );
 
             Item item7 = new Item(
                     "ITEM07",
                     "Item 7",
                     "Taiwan",
-                    120
+                    new BigDecimal(120)
             );
 
             Item item8 = new Item(
                     "ITEM08",
                     "Item 8",
                     "Taiwan",
-                    149
+                    new BigDecimal(149)
             );
 
             Item item9 = new Item(
                     "ITEM09",
                     "Item 9",
                     "Motion",
-                    178
+                    new BigDecimal(178)
             );
 
             Item item10 = new Item(
                     "ITEM10",
                     "Item 10",
                     "Motion",
-                    149
+                    new BigDecimal(149)
             );
 
             Item item11 = new Item(
                     "ITEM11",
                     "Item 11",
                     "Motion",
-                    149
+                    new BigDecimal(149)
             );
 
             Item item12 = new Item(
                     "ITEM12",
                     "Item 12",
                     "NAPA",
-                    130
+                    new BigDecimal(130)
             );
 
             Item item13 = new Item(
                     "ITEM13",
                     "Item 13",
                     "NAPAPA",
-                    137
+                    new BigDecimal(137)
             );
 
             Item item14 = new Item(
                     "ITEM14",
                     "Item 14",
                     "GPC",
-                    137
+                    new BigDecimal(137)
             );
 
             Item item15 = new Item(
                     "ITEM15",
                     "Item 15",
                     "GPC",
-                    190
+                    new BigDecimal(190)
             );
 
             Item item16 = new Item(
                     "ITEM16",
                     "Item 16",
                     "TAPA",
-                    193
+                    new BigDecimal(193)
             );
 
 
@@ -135,28 +136,28 @@ public class ItemConfig {
                     "ITEM17",
                     "Item 17",
                     "TAPA",
-                    178
+                    new BigDecimal(178)
             );
 
             Item item18 = new Item(
                     "ITEM18",
                     "Item 18",
                     "NAPA",
-                    99
+                    new BigDecimal(99)
             );
 
             Item item19 = new Item(
                     "ITEM19",
                     "Item 19",
                     "Tech",
-                    303
+                    new BigDecimal(303)
             );
 
             Item item20 = new Item(
                     "ITEM20",
                     "Item 20",
                     "Tech",
-                    528
+                    new BigDecimal(528)
             );
 
 
